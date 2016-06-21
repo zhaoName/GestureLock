@@ -55,4 +55,10 @@
     
 }
 
+
+- (IBAction)cleanGesturePwd:(UIButton *)sender
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pwd"];
+}
+
 @end

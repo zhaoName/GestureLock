@@ -86,13 +86,39 @@
                                     <action selector="setAgainGesturePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ai-rm-Mem"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-0F-Fxx">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="6oD-5A-vLB"/>
+                                    <constraint firstAttribute="height" constant="30" id="LuY-My-bxO"/>
+                                </constraints>
+                                <state key="normal" title="清除手势密码"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6oD-5A-vLB"/>
+                                        <exclude reference="LuY-My-bxO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6oD-5A-vLB"/>
+                                        <include reference="LuY-My-bxO"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="cleanGesturePwd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uuQ-g6-Mji"/>
+                                    <action selector="forgetGesturePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UXM-el-eLi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XAP-g3-oZR" firstAttribute="top" secondItem="dvr-8k-HzU" secondAttribute="bottom" constant="49" id="1lL-si-DFh"/>
                             <constraint firstItem="dvr-8k-HzU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="7bw-DL-RDi"/>
                             <constraint firstItem="XAP-g3-oZR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bZh-LL-brj"/>
+                            <constraint firstItem="rKw-0F-Fxx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d3D-CW-lYd"/>
                             <constraint firstItem="kaf-ps-AST" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eke-jz-FaY"/>
+                            <constraint firstItem="rKw-0F-Fxx" firstAttribute="top" secondItem="kaf-ps-AST" secondAttribute="bottom" constant="46" id="eze-yd-Pqf"/>
                             <constraint firstItem="dvr-8k-HzU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mnx-DY-Gtz"/>
                             <constraint firstItem="kaf-ps-AST" firstAttribute="top" secondItem="XAP-g3-oZR" secondAttribute="bottom" constant="47" id="rCi-Uc-KEv"/>
                         </constraints>
@@ -101,14 +127,17 @@
                                 <exclude reference="dvr-8k-HzU"/>
                                 <exclude reference="kaf-ps-AST"/>
                                 <exclude reference="XAP-g3-oZR"/>
+                                <exclude reference="rKw-0F-Fxx"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1lL-si-DFh"/>
-                                <exclude reference="bZh-LL-brj"/>
                                 <exclude reference="7bw-DL-RDi"/>
                                 <exclude reference="mnx-DY-Gtz"/>
+                                <exclude reference="1lL-si-DFh"/>
+                                <exclude reference="bZh-LL-brj"/>
                                 <exclude reference="eke-jz-FaY"/>
                                 <exclude reference="rCi-Uc-KEv"/>
+                                <exclude reference="d3D-CW-lYd"/>
+                                <exclude reference="eze-yd-Pqf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -116,14 +145,17 @@
                                 <include reference="dvr-8k-HzU"/>
                                 <include reference="kaf-ps-AST"/>
                                 <include reference="XAP-g3-oZR"/>
+                                <include reference="rKw-0F-Fxx"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1lL-si-DFh"/>
-                                <include reference="bZh-LL-brj"/>
                                 <include reference="7bw-DL-RDi"/>
                                 <include reference="mnx-DY-Gtz"/>
+                                <include reference="1lL-si-DFh"/>
+                                <include reference="bZh-LL-brj"/>
                                 <include reference="eke-jz-FaY"/>
                                 <include reference="rCi-Uc-KEv"/>
+                                <include reference="d3D-CW-lYd"/>
+                                <include reference="eze-yd-Pqf"/>
                             </mask>
                         </variation>
                     </view>

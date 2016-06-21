@@ -152,7 +152,14 @@
     }
     else if(self.lockType == GestureLockTypeResetPwd)
     {
-        
+        if([self.passwordStr isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"]])
+        {
+           
+        }
+        else
+        {
+            NSLog(@"旧密码输入错误");
+        }
     }
     else
     {
