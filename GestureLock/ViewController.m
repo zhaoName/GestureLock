@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "GestureLockViewController.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+   
+    self.navigationItem.title = @"fuck";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)setGesturePassword:(UIButton *)sender
+{
+    //[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pwd"];
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
+    {
+        NSLog(@"你已设置过手势密码了");
+    }
+    else
+    {
+        GestureLockViewController *gesVC = [[GestureLockViewController alloc] init];
+        gesVC.type = GestureLockTypeSetPwd;
+        [self.navigationController pushViewController:gesVC animated:YES];
+    }
+}
+
+- (IBAction)setAgainGesturePassword:(id)sender
+{
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
+    {
+        GestureLockViewController *gesVC = [[GestureLockViewController alloc] init];
+        gesVC.type = GestureLockTypeResetPwd;
+        [self.navigationController pushViewController:gesVC animated:YES];
+    }
+    else
+    {
+        NSLog(@"你还未设置手势密码");
+    }
+}
+
+- (IBAction)forgetGesturePassword:(UIButton *)sender
+{
+    
 }
 
 @end

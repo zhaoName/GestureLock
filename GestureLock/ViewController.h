@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, GestureLockType) {
+    
+    GestureLockTypeSetPwd = 0, /**<设置密码*/
+    GestureLockTypeResetPwd,   /**<重置密码*/
+    GestureLockTypeForgetPwd,  /**<忘记密码*/
+};
+
+
 @interface ViewController : UIViewController
+
+
+@property (nonatomic, assign) GestureLockType type /**<忘记密码*/;
 
 
 @end

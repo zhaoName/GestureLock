@@ -1,25 +1,174 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x0h-PC-zFx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-8k-HzU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="FsA-uS-a0M"/>
+                                    <constraint firstAttribute="height" constant="30" id="WY9-NK-qkg"/>
+                                </constraints>
+                                <state key="normal" title="设置手势密码"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FsA-uS-a0M"/>
+                                        <exclude reference="WY9-NK-qkg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FsA-uS-a0M"/>
+                                        <include reference="WY9-NK-qkg"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="setGesturePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PL9-Lz-XjQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-ps-AST">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="ED5-aS-kgD"/>
+                                    <constraint firstAttribute="height" constant="30" id="wTR-L7-vLk"/>
+                                </constraints>
+                                <state key="normal" title="忘记手势密码"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ED5-aS-kgD"/>
+                                        <exclude reference="wTR-L7-vLk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ED5-aS-kgD"/>
+                                        <include reference="wTR-L7-vLk"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="forgetGesturePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QKC-rY-OrU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAP-g3-oZR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="Hge-L8-A0n"/>
+                                    <constraint firstAttribute="height" constant="30" id="W9y-3L-YsN"/>
+                                </constraints>
+                                <state key="normal" title="重置手势密码"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Hge-L8-A0n"/>
+                                        <exclude reference="W9y-3L-YsN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Hge-L8-A0n"/>
+                                        <include reference="W9y-3L-YsN"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="setAgainGesturePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ai-rm-Mem"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XAP-g3-oZR" firstAttribute="top" secondItem="dvr-8k-HzU" secondAttribute="bottom" constant="49" id="1lL-si-DFh"/>
+                            <constraint firstItem="dvr-8k-HzU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="7bw-DL-RDi"/>
+                            <constraint firstItem="XAP-g3-oZR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bZh-LL-brj"/>
+                            <constraint firstItem="kaf-ps-AST" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eke-jz-FaY"/>
+                            <constraint firstItem="dvr-8k-HzU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mnx-DY-Gtz"/>
+                            <constraint firstItem="kaf-ps-AST" firstAttribute="top" secondItem="XAP-g3-oZR" secondAttribute="bottom" constant="47" id="rCi-Uc-KEv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dvr-8k-HzU"/>
+                                <exclude reference="kaf-ps-AST"/>
+                                <exclude reference="XAP-g3-oZR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1lL-si-DFh"/>
+                                <exclude reference="bZh-LL-brj"/>
+                                <exclude reference="7bw-DL-RDi"/>
+                                <exclude reference="mnx-DY-Gtz"/>
+                                <exclude reference="eke-jz-FaY"/>
+                                <exclude reference="rCi-Uc-KEv"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dvr-8k-HzU"/>
+                                <include reference="kaf-ps-AST"/>
+                                <include reference="XAP-g3-oZR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1lL-si-DFh"/>
+                                <include reference="bZh-LL-brj"/>
+                                <include reference="7bw-DL-RDi"/>
+                                <include reference="mnx-DY-Gtz"/>
+                                <include reference="eke-jz-FaY"/>
+                                <include reference="rCi-Uc-KEv"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="FHB-tJ-FRZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="330" y="390"/>
+        </scene>
+        <!--Gesture Lock View Controller-->
+        <scene sceneID="fhI-vX-QVz">
+            <objects>
+                <viewController id="gwV-2q-gs4" customClass="GestureLockViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zk8-hN-QRe"/>
+                        <viewControllerLayoutGuide type="bottom" id="h1u-1s-sjn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GNj-Ww-t54">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OGr-Qg-3q3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="390"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v9S-zc-lO6">
+            <objects>
+                <navigationController id="x0h-PC-zFx" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1XZ-1y-9jZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2xK-N1-YeR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5el-hh-k3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-334.5" y="390"/>
         </scene>
     </scenes>
 </document>

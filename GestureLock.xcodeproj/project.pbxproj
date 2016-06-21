@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE11A86D1D1932A900EAEF97 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE11A86C1D1932A900EAEF97 /* PushViewController.m */; };
 		FE2F33AE1D1791D200EBE9A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F33AD1D1791D200EBE9A4 /* main.m */; };
 		FE2F33B11D1791D200EBE9A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F33B01D1791D200EBE9A4 /* AppDelegate.m */; };
 		FE2F33B41D1791D200EBE9A4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F33B31D1791D200EBE9A4 /* ViewController.m */; };
 		FE2F33B71D1791D200EBE9A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2F33B51D1791D200EBE9A4 /* Main.storyboard */; };
 		FE2F33B91D1791D200EBE9A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2F33B81D1791D200EBE9A4 /* Assets.xcassets */; };
 		FE2F33BC1D1791D200EBE9A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2F33BA1D1791D200EBE9A4 /* LaunchScreen.storyboard */; };
+		FE2F33C51D17957700EBE9A4 /* GestureLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F33C41D17957700EBE9A4 /* GestureLockViewController.m */; };
+		FE2F33C81D17A22200EBE9A4 /* GestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F33C71D17A22200EBE9A4 /* GestureView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE11A86B1D1932A900EAEF97 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		FE11A86C1D1932A900EAEF97 /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
 		FE2F33A91D1791D200EBE9A4 /* GestureLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2F33AD1D1791D200EBE9A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE2F33AF1D1791D200EBE9A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +31,10 @@
 		FE2F33B81D1791D200EBE9A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2F33BB1D1791D200EBE9A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE2F33BD1D1791D200EBE9A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2F33C31D17957700EBE9A4 /* GestureLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureLockViewController.h; sourceTree = "<group>"; };
+		FE2F33C41D17957700EBE9A4 /* GestureLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureLockViewController.m; sourceTree = "<group>"; };
+		FE2F33C61D17A22200EBE9A4 /* GestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureView.h; sourceTree = "<group>"; };
+		FE2F33C71D17A22200EBE9A4 /* GestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +51,12 @@
 		FE2F33A01D1791D100EBE9A4 = {
 			isa = PBXGroup;
 			children = (
+				FE11A86B1D1932A900EAEF97 /* PushViewController.h */,
+				FE11A86C1D1932A900EAEF97 /* PushViewController.m */,
+				FE2F33C61D17A22200EBE9A4 /* GestureView.h */,
+				FE2F33C71D17A22200EBE9A4 /* GestureView.m */,
+				FE2F33C31D17957700EBE9A4 /* GestureLockViewController.h */,
+				FE2F33C41D17957700EBE9A4 /* GestureLockViewController.m */,
 				FE2F33AB1D1791D200EBE9A4 /* GestureLock */,
 				FE2F33AA1D1791D200EBE9A4 /* Products */,
 			);
@@ -150,6 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2F33B41D1791D200EBE9A4 /* ViewController.m in Sources */,
+				FE2F33C81D17A22200EBE9A4 /* GestureView.m in Sources */,
+				FE11A86D1D1932A900EAEF97 /* PushViewController.m in Sources */,
+				FE2F33C51D17957700EBE9A4 /* GestureLockViewController.m in Sources */,
 				FE2F33B11D1791D200EBE9A4 /* AppDelegate.m in Sources */,
 				FE2F33AE1D1791D200EBE9A4 /* main.m in Sources */,
 			);
@@ -302,6 +320,7 @@
 				FE2F33C21D1791D200EBE9A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
