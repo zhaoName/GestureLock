@@ -101,9 +101,9 @@
     }
     else if(self.lockType == GestureLockTypeResetPwd)
     {
-        self.setNewPwd();
+        self.VerifyOldPwdBeforeSetNewPwd(@"请输入旧密码");
     }
-    else
+    else if(self.lockType == GestureLockTypeForgetPwd)
     {
         
     }
@@ -140,30 +140,20 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    [self slideEndDealGesturePwd];
+}
+
+#pragma mark -- 当滑动结束时对密码的一些处理
+
+/** 当滑动结束时对密码的一些处理*/
+- (void)slideEndDealGesturePwd
+{
+    if(self.passwordStr.length != 0)  [self checkGesturePwd];
+    
     for(UIButton *button in self.selectButtons)
     {
         //去除已选中button的选中状态
         button.selected = NO;
-    }
-    
-    if(self.lockType == GestureLockTypeSetPwd)
-    {
-        [self setupPwd];
-    }
-    else if(self.lockType == GestureLockTypeResetPwd)
-    {
-        if([self.passwordStr isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"]])
-        {
-           
-        }
-        else
-        {
-            NSLog(@"旧密码输入错误");
-        }
-    }
-    else
-    {
-        
     }
     
     //清除记录的所点击的轨迹
@@ -176,34 +166,61 @@
     [self setNeedsDisplay];
 }
 
-/** 处理密码*/
-- (void)setupPwd
+/** 验证手势密码*/
+- (void)checkGesturePwd
 {
     //选中的按钮应该超过3个
     if(self.selectButtons.count <= 3)
     {
         self.judgePwdLength();
-        
-        //清除已选中的button
-        [self.selectButtons removeAllObjects];
-        //去除红色线
-        [self setNeedsDisplay];
-        
         return;
     }
+    if(self.lockType == GestureLockTypeSetPwd)
+    {
+        [self setupPwd];
+    }
+    else if(self.lockType == GestureLockTypeResetPwd)
+    {
+        //若NSUserDefaults不为空，则说明是在验证旧密码
+        if([[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
+        {
+            if([self.passwordStr isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"]])
+            {
+                self.setNewPwd();
+            }
+            else
+            {
+                self.VerifyOldPwdBeforeSetNewPwd(@"输入的旧密码有误");
+            }
+        }
+        else //若NSUserDefaults为空，则说明验证旧密码成功，要设置新密码
+        {
+            [self setupPwd];
+        }
+    }
+    else if(self.lockType == GestureLockTypeForgetPwd)
+    {
+        
+    }
+}
+
+/** 处理密码*/
+- (void)setupPwd
+{
     //判断两次输入的密码
-    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
+    if(self.rightPwdStr.length == 0)
     {
         //记录第一次的密码
         self.rightPwdStr = self.passwordStr;
-        [[NSUserDefaults standardUserDefaults] setObject:self.rightPwdStr forKey:@"pwd"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else
     {
         if([self.rightPwdStr isEqualToString:self.passwordStr])
         {
             self.twiceInputPwdIsEqual(); //一样
+            //若两次一样 则存储手势密码
+            [[NSUserDefaults standardUserDefaults] setObject:self.rightPwdStr forKey:@"pwd"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
         else
         {

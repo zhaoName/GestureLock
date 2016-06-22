@@ -14,10 +14,10 @@
 @property (nonatomic, assign)  GestureLockType lockType;
 
 
-/**第一次设置密码*/
+/** 第一次设置密码*/
 @property (nonatomic, strong) void(^setFirstPwd)(void);
 
-/**确认密码*/
+/** 确认密码*/
 @property (nonatomic, strong) void(^setConfirmPwd)(void);
 
 /** 两次输入的密码不一样*/
@@ -30,12 +30,16 @@
 @property (nonatomic, strong) void(^judgePwdLength)(void);
 
 
+/** 重置密码前验证旧密码*/
+@property (nonatomic, strong) void(^VerifyOldPwdBeforeSetNewPwd)(NSString *);
 
-
-/**重置密码*/
+/** 重置密码*/
 @property (nonatomic, strong) void(^setNewPwd)(void);
 
-/**忘记密码*/
+/** 忘记密码*/
 @property (nonatomic, strong) void(^forgetPwd)(void);
+
+
+- (void)setupPwd;
 
 @end

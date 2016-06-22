@@ -81,9 +81,16 @@
     
     
      /*****  重置密码  ********/
-    self.gestureView.setNewPwd = ^(void)
+    self.gestureView.VerifyOldPwdBeforeSetNewPwd = ^(NSString *message)
     {
-        weakSelf.tipLabel.text = @"请输入旧密码";
+        weakSelf.tipLabel.text = message;
+    };
+    
+    self.gestureView.setNewPwd = ^()
+    {
+        weakSelf.tipLabel.text = @"请滑动设置新的手势密码";
+        //删除以前的旧密码
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pwd"];
     };
 }
 
