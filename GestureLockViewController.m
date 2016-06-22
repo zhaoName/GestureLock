@@ -70,8 +70,8 @@
     {
         weakSelf.tipLabel.text = @"密码设置成功";
         
-        //延迟两秒钟跳转到下一个界面
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //延迟1秒钟跳转到下一个界面
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             PushViewController *pushVC = [[PushViewController alloc] init];
             
@@ -89,9 +89,14 @@
     self.gestureView.setNewPwd = ^()
     {
         weakSelf.tipLabel.text = @"请滑动设置新的手势密码";
+        
         //删除以前的旧密码
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pwd"];
     };
+    
+    
+     /*****  忘记密码  ********/
+    
 }
 
 /**重设密码*/
@@ -101,7 +106,8 @@
     
     self.tipLabel.text = @"请重新输入密码";
     
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pwd"];
+    //第一次输入的密码没有存储，so重设密码时应该把第一次正确的密码清除
+    self.gestureView.rightPwdStr = nil;
 }
 
 #pragma mark -- setter或getter

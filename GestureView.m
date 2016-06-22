@@ -17,8 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *selectButtons;
 /** 临时密码*/
 @property (nonatomic, strong) NSMutableString *passwordStr;
-/** 正确的密码*/
-@property (nonatomic, strong) NSString *rightPwdStr;
+
 
 @end
 
@@ -90,7 +89,7 @@
     if(self.lockType == GestureLockTypeSetPwd)
     {
         //第一次设置密码
-        if(![[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
+        if(self.rightPwdStr.length == 0)
         {
             self.setFirstPwd();
         }
@@ -101,7 +100,7 @@
     }
     else if(self.lockType == GestureLockTypeResetPwd)
     {
-        self.VerifyOldPwdBeforeSetNewPwd(@"请输入旧密码");
+        //self.VerifyOldPwdBeforeSetNewPwd(@"请输入旧密码");
     }
     else if(self.lockType == GestureLockTypeForgetPwd)
     {
@@ -212,12 +211,14 @@
     {
         //记录第一次的密码
         self.rightPwdStr = self.passwordStr;
+        self.setConfirmPwd();
     }
     else
     {
         if([self.rightPwdStr isEqualToString:self.passwordStr])
         {
             self.twiceInputPwdIsEqual(); //一样
+            
             //若两次一样 则存储手势密码
             [[NSUserDefaults standardUserDefaults] setObject:self.rightPwdStr forKey:@"pwd"];
             [[NSUserDefaults standardUserDefaults] synchronize];

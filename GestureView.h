@@ -12,6 +12,8 @@
 @interface GestureView : UIView
 
 @property (nonatomic, assign)  GestureLockType lockType;
+/** 正确的密码*/
+@property (nonatomic, strong) NSString *rightPwdStr;
 
 
 /** 第一次设置密码*/

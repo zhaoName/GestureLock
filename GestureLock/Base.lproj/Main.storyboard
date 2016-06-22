@@ -106,8 +106,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="cleanGesturePwd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uuQ-g6-Mji"/>
-                                    <action selector="forgetGesturePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UXM-el-eLi"/>
+                                    <action selector="cleanGesturePwd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5XF-mt-BY2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,10 +129,10 @@
                                 <exclude reference="rKw-0F-Fxx"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7bw-DL-RDi"/>
-                                <exclude reference="mnx-DY-Gtz"/>
                                 <exclude reference="1lL-si-DFh"/>
                                 <exclude reference="bZh-LL-brj"/>
+                                <exclude reference="7bw-DL-RDi"/>
+                                <exclude reference="mnx-DY-Gtz"/>
                                 <exclude reference="eke-jz-FaY"/>
                                 <exclude reference="rCi-Uc-KEv"/>
                                 <exclude reference="d3D-CW-lYd"/>
@@ -148,10 +147,10 @@
                                 <include reference="rKw-0F-Fxx"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7bw-DL-RDi"/>
-                                <include reference="mnx-DY-Gtz"/>
                                 <include reference="1lL-si-DFh"/>
                                 <include reference="bZh-LL-brj"/>
+                                <include reference="7bw-DL-RDi"/>
+                                <include reference="mnx-DY-Gtz"/>
                                 <include reference="eke-jz-FaY"/>
                                 <include reference="rCi-Uc-KEv"/>
                                 <include reference="d3D-CW-lYd"/>

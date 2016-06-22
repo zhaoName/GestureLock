@@ -52,7 +52,16 @@
 
 - (IBAction)forgetGesturePassword:(UIButton *)sender
 {
-    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
+    {
+        GestureLockViewController *gesVC = [[GestureLockViewController alloc] init];
+        gesVC.type = GestureLockTypeForgetPwd;
+        [self.navigationController pushViewController:gesVC animated:YES];
+    }
+    else
+    {
+        NSLog(@"你还未设置手势密码");
+    }
 }
 
 
