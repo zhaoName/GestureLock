@@ -16,6 +16,7 @@
 		FE2F33BC1D1791D200EBE9A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2F33BA1D1791D200EBE9A4 /* LaunchScreen.storyboard */; };
 		FE2F33C51D17957700EBE9A4 /* GestureLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F33C41D17957700EBE9A4 /* GestureLockViewController.m */; };
 		FE2F33C81D17A22200EBE9A4 /* GestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F33C71D17A22200EBE9A4 /* GestureView.m */; };
+		FECFE2D41D1A998A00791F82 /* CALayer+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = FECFE2D31D1A998A00791F82 /* CALayer+Shake.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		FE2F33C41D17957700EBE9A4 /* GestureLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureLockViewController.m; sourceTree = "<group>"; };
 		FE2F33C61D17A22200EBE9A4 /* GestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureView.h; sourceTree = "<group>"; };
 		FE2F33C71D17A22200EBE9A4 /* GestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureView.m; sourceTree = "<group>"; };
+		FECFE2D21D1A998A00791F82 /* CALayer+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Shake.h"; sourceTree = "<group>"; };
+		FECFE2D31D1A998A00791F82 /* CALayer+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Shake.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,8 @@
 		FE2F33A01D1791D100EBE9A4 = {
 			isa = PBXGroup;
 			children = (
+				FECFE2D21D1A998A00791F82 /* CALayer+Shake.h */,
+				FECFE2D31D1A998A00791F82 /* CALayer+Shake.m */,
 				FE11A86B1D1932A900EAEF97 /* PushViewController.h */,
 				FE11A86C1D1932A900EAEF97 /* PushViewController.m */,
 				FE2F33C61D17A22200EBE9A4 /* GestureView.h */,
@@ -164,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FECFE2D41D1A998A00791F82 /* CALayer+Shake.m in Sources */,
 				FE2F33B41D1791D200EBE9A4 /* ViewController.m in Sources */,
 				FE2F33C81D17A22200EBE9A4 /* GestureView.m in Sources */,
 				FE11A86D1D1932A900EAEF97 /* PushViewController.m in Sources */,
