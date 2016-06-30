@@ -9,7 +9,12 @@
 #import "ViewController.h"
 #import "GestureLockViewController.h"
 
+#define BtnWidth 100
+#define BtnHeight 100
+
 @interface ViewController ()
+
+@property (nonatomic, strong) UIButton *btn;
 
 @end
 
@@ -19,8 +24,43 @@
     [super viewDidLoad];
    
     self.navigationItem.title = @"fuck";
+    
+    _btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    _btn.frame = CGRectMake(10, 64, BtnWidth, BtnHeight);
+    _btn.backgroundColor = [UIColor redColor];
+    _btn.userInteractionEnabled = NO;
+    
+    [self.view addSubview:_btn];
+    
+    //动画
+    [UIView animateWithDuration:10.0f delay:0.0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction  animations:^{
+        
+        _btn.frame = CGRectMake(10, 480, BtnWidth, BtnHeight);
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    
+    //获取鼠标点击的点
+    CGPoint point = [touch locationInView:self.view];
+    
+    //获取移动中btn的位置   center
+    CGPoint btnPoint = [[_btn.layer presentationLayer] position];
+    //NSLog(@"%@", NSStringFromCGPoint(btnPoint));
+    
+    if(point.x < btnPoint.x + BtnWidth/2 && point.x > btnPoint.x - BtnWidth/2 && point.y < btnPoint.y + BtnHeight/2 && point.y > btnPoint.y - 50)
+    {
+        NSLog(@"点击了移动中的btn");
+    }
+}
+
+/** 设置手势密码*/
 - (IBAction)setGesturePassword:(UIButton *)sender
 {
     //[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pwd"];
@@ -36,6 +76,7 @@
     }
 }
 
+/** 重置手势密码*/
 - (IBAction)setAgainGesturePassword:(id)sender
 {
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
@@ -50,6 +91,7 @@
     }
 }
 
+/** 忘记手势密码*/
 - (IBAction)forgetGesturePassword:(UIButton *)sender
 {
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"])
@@ -65,6 +107,7 @@
 }
 
 
+/** 清除手势密码*/
 - (IBAction)cleanGesturePwd:(UIButton *)sender
 {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pwd"];
